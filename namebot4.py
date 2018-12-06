@@ -81,7 +81,7 @@ def start(bot, update):
 def help(bot, update):
     ##TODO seperate the list into seperate lines
      """Send a message when the command /help is issued."""
-     update.message.reply_text('I can do a few things.\n Let me know cool names with "/name somename" \n "/name add NAME" #will add the name to our database\n "/name print please" #will print the name\n"/help" will print this menu\n "/echo words words words" #is as close to talking as i get \n "/load" # should load the database into memory this is todo \n "/save" # should save the new names to database" this is todo')
+     update.message.reply_text('I can do a few things.\n Let me know cool names with "/name somename" \n "/name add NAME" #will add the name to our database\n "/name print" #will print the names in our database\n"/help" will print this menu\n "/echo words words words" #is as close to talking as i get \n "/load" # should load the the databases but this is not used anymore \n "/save" # should save the new names to database but this has been added to the add section"')
 
 
 def echo(bot, update):
@@ -106,7 +106,8 @@ def name(bot, update):
         temp2 = [temp[2] + "\n"]
         #names = names + temp2
         all_names = all_names + temp2
-        update.message.reply_text(str(temp2) + "added")
+        update.message.reply_text(str(temp[2]) + " added to local database")
+        save(bot,update)
 
     elif temp[1] == "print":
         update.message.reply_text("hardcoded ones: " + str(names) + "loaded ones : " + str(all_names))
@@ -136,11 +137,12 @@ def load(bot, update):
     update.message.reply_text(" this will load the database into memory but it is in todo status" )
 
 def save(bot, update):
-    update.message.reply_text(" this will save the database into memory but it is in todo status" )
+    update.message.reply_text("updating database" )
     global all_names
     with open('names.db.short','w') as f:
         for item in all_names:
             f.write("{}".format(item))
+        update.message.reply_text("database updated")
 
 
 
