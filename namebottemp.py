@@ -1,8 +1,8 @@
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """Simple Bot to reply to Telegram messages.
+more testing
 This program is dedicated to the public domain under the CC0 license.
 This Bot uses the Updater class to handle the bot.
 First, a few handler functions are defined. Then, those functions are passed to
@@ -22,6 +22,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
+froxxlogger = logging.getLogger(__name__)
 
 
 # Define a few command handlers. These usually take the two arguments bot and
