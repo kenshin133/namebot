@@ -72,9 +72,13 @@ def help(bot, update):
 
 
 def echo(bot, update):
+    """something else """
+    something else
+
     """Echo the user message."""
     temp=update.message.text
-    temp=temp.split(' ')
+    temp=(' ')
+    dhtudsa a nl lna skn 
     #update.message.reply_text("temp is " + str(temp))
     update.message.reply_text("did you say " + temp[1] + "?")
 
